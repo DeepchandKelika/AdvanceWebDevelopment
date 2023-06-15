@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Portfolio | Deep Chand</title>
+    <link rel="stylesheet" href="src/styles/style.css">
+</head>
+<body>
+    <header>
+        <h1>Deep Chand</h1>
+        <img src="src/images/wreckingball.jpg" id="profilepic" alt="Profile Photo">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="goTop()">Home</a></li>
+            <li><a href="Deepchand_Resume.pdf" target="_blank">Resume</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contactForm">Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <section class="intro">
+       
+        <p>Hello and welcome to my website! I am a full stack developer with a passion for building innovative web applications. <br/>
+            From front-end design to back-end development, I have the skills and expertise to bring your ideas to life.</p><br/ >
+             Let's work together to create amazing digital experiences. <a href="#contactForm"> Get in touch today! </a></p>
+    </section>
+
+
+    <div class="projects" id="projects">
+        <h2>Projects</h2>
+        <div id="project-tiles">
+            <div class="project-tile">
+                <a href="https://learn-anything.xyz/">
+                    <img src="src/images/learnanythingxyz.png" alt="Project 1">
+                </a>
+                <h3>Learn Anything</h3>
+                <p>A search engine for learning anything.</p>
+            </div>
+            <div class="project-tile">
+                <a href="https://roadmap.sh/">
+                    <img src="src/images/roadmap.png" alt="Project 2">
+                </a>
+                <h3>RoadMap</h3>
+                <p>A roadmap for learning anything.</p>
+            </div>
+            <div class="project-tile">
+                <a href="https://www.explainpaper.com/">
+                    <img src="src/images/explainpaper.jpg" alt="Project 3">
+                </a>
+                <h3>Explain Paper</h3>
+                <p>A platform to explain papers.</p>
+            </div>
+            <div class="project-tile">
+                <a href="https://app.lofi.co/">
+                    <img src="src/images/lofi.jpg" alt="Project 4">
+                </a>
+                <h3>Lofi</h3>
+                <p>A platform to listen to calm music while working.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="contactForm" id = "contactForm">
+            <h2>Contact Me</h2>
+            <form  id="contactMeForm" method="POST">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+              
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required>
+              
+              <label for="message">Message:</label>
+              <textarea id="message" name="message" required></textarea>
+              
+              <button onclick="submitForm(event)">Submit</button>
+            </form>
+          </div>
+    </footer>
+
+    
+    <script>
+        window.onload = function() {
+        var links = document.getElementsByTagName("a");
+        for (var i = 0; i < links.length; i++) {
+            links[i].style.color = "blue";
+        }
+        
+    };
+    function goTop(){
+        window.scrollTo(0, 0);
+    }
+        function submitForm(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            var form = event.target.form;
+            if (form.checkValidity()) {
+                alert('Message submitted');
+                form.reset();
+            }else {
+            form.reportValidity();
+        }
+        }
+    </script>
+
+</body>
+</html>

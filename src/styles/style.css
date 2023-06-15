@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: antiquewhite;
+
+}
+
+/* Header Styles */
+header {
+    
+    text-align: center;
+    position: relative; 
+}
+
+nav {
+    width: 200px; 
+    background-color: rgb(90, 195, 128);
+    color: #fff;
+    padding: 10px;
+    position: fixed;
+    left: 0; 
+    top: 0; 
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: block; 
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block; 
+    color: #fff;
+    height: 2.25em;
+    line-height: 2.25em;
+    padding: 0 1.25em;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 1px transparent;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #000;
+}
+
+nav ul li a:hover {
+    background-color: white;
+}
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.intro {
+    height: 300px;
+    width: 100%;
+    text-align: center;
+    background-image: url('../images/aboutme.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 600px;
+    color: white;
+    padding: 50px;
+}
+
+.projects {
+    text-align: center;
+    background-image: url('../images/webdesign.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.projects h2 {
+    margin-top: 20px;
+    color:aqua;
+}
+
+#project-tiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-tile {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    width: 250px; 
+    margin: 10px; 
+}
+
+.project-tile img {
+    width: 100%;
+    height: 70%;
+    max-height: 200px;
+}
+
+.project-tile h3 {
+    margin-top: 10px;
+}
+
+.project-tile p {
+    margin-top: 5px;
+}
+
+#profilepic {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    height:55px;
+    width: 100px;
+}
+
+
+    .contactForm {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .contactForm label,
+    .contactForm input,
+    .contactForm textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .contactForm textarea {
+      height: 120px;
+    }
+    .contactForm button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .contactForm button:hover {
+      background-color: #45a049;
+    }
