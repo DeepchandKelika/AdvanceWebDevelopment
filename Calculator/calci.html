@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> 
+        Calculator
+    </title>
+    <link rel="stylesheet" type="text/css" href="calci.css" />
+   
+
+</head>
+
+<body>
+
+    <div id="calci">
+    <input type="text"  id="calculation" placeholder=" " disabled/>
+    <div id="numpad">
+      <button onclick="appendC('7')">7</button>
+      <button onclick="appendC('8')">8</button>
+      <button onclick="appendC('9')">9</button>
+      <button onclick="appendC('/')">/</button>
+      <button onclick="appendC('4')">4</button>
+      <button onclick="appendC('5')">5</button>
+      <button onclick="appendC('6')">6</button>
+      <button onclick="appendC('*')">*</button>
+      <button onclick="appendC('1')">1</button>
+      <button onclick="appendC('2')">2</button>
+      <button onclick="appendC('3')">3</button>
+      <button onclick="appendC('-')">-</button>
+      <button onclick="appendC('0')">0</button>
+      <button onclick="appendC('.')">.</button>
+      <button onclick="appendC('+')">+</button>
+      <button onclick="evaluateExpression()">=</button>
+      <button onclick="sqrt()">√</button>
+      <button onclick="calTrig('sin')">sin</button>
+      <button onclick="calTrig('cos')">cos</button>
+      <button onclick="calTrig('Tan')">tan</button>
+      <button onclick="appendC('**')">^</button>
+      <button onclick="clearResultValue()">Clear</button>
+    </div>
+  </div>
+  
+  <script src="calci.js"> </script>
+
+
+
+
+</body>
+
+</html>
