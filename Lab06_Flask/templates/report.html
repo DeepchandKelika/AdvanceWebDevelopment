@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <h1>Password verification result:</h1>
+    {% if failed_requirements %}
+        <p>The password did not meet the following requirements:</p>
+        <ul>
+            {% for requirement in failed_requirements %}
+                <li>{{ requirement }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>The password meets all the requirements! User added to database.</p>
+    {% endif %}
+
+{% endblock %}
