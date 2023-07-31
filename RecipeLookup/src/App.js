@@ -18,29 +18,19 @@ const App = () => {
     mealType: '',
     dishType: '',
   });
-  const diet = [' ', 'balanced', 'high-fiber','high-protein','low-carb', 'low-fat', 'low-sodium'];
-  const health = [" ","alcohol-cocktail","alcohol-free","celery-free","crustacean-free","dairy-free","DASH","egg-free","fish-free","fodmap-free","gluten-free","immuno-supportive","keto-friendly","kidney-friendly","kosher","low-fat-abs","low-potassium","low-sugar","lupine-free","Mediterranean","mollusk-free","mustard-free","no-oil-added","paleo","peanut-free","pescatarian","pork-free","red-meat-free","sesame-free","shellfish-free","soy-free","sugar-conscious","sulfite-free","tree-nut-free","vegan","vegetarian","wheat-free"]
-  const cuisineType = [" ","American","Asian","British","Caribbean","Central Europe","Chinese","Eastern Europe","French","Indian","Italian","Japanese","Kosher","Mediterranean","Mexican","Middle Eastern","Nordic","South American","South East Asian"]
-  const mealType = [" ","Breakfast","Dinner","Lunch","Snack","Teatime"]
-  const dishType = [" ","Biscuits and cookies","Bread","Cereals","Condiments and sauces","Desserts","Drinks","Main course","Pancake","Preps","Preserve","Salad","Sandwiches","Side dish","Soup","Starter","Sweets"]
+  const diet = ["balanced", "high-fiber","high-protein","low-carb", "low-fat", "low-sodium"];
+  const health = ["alcohol-cocktail","alcohol-free","celery-free","crustacean-free","dairy-free","DASH","egg-free","fish-free","fodmap-free","gluten-free","immuno-supportive","keto-friendly","kidney-friendly","kosher","low-fat-abs","low-potassium","low-sugar","lupine-free","Mediterranean","mollusk-free","mustard-free","no-oil-added","paleo","peanut-free","pescatarian","pork-free","red-meat-free","sesame-free","shellfish-free","soy-free","sugar-conscious","sulfite-free","tree-nut-free","vegan","vegetarian","wheat-free"]
+  const cuisineType = ["American","Asian","British","Caribbean","Central Europe","Chinese","Eastern Europe","French","Indian","Italian","Japanese","Kosher","Mediterranean","Mexican","Middle Eastern","Nordic","South American","South East Asian"]
+  const mealType = ["Breakfast","Dinner","Lunch","Snack","Teatime"]
+  const dishType = ["Biscuits and cookies","Bread","Cereals","Condiments and sauces","Desserts","Drinks","Main course","Pancake","Preps","Preserve","Salad","Sandwiches","Side dish","Soup","Starter","Sweets"]
 
 
-  //useEffect(() => {
-  //  fetchResults();
-  //}, []);
 
   const fetchResults = async () => {
     try {
-      // const dietParam = selectedFilters.diet ? encodeURIComponent(selectedFilters.diet) : '';
-      // const healthParam = selectedFilters.health ? encodeURIComponent(selectedFilters.health) : '';
-      // const cuisineTypeParam = selectedFilters.cuisineType ? encodeURIComponent(selectedFilters.cuisineType) : '';
-      // const mealTypeParam = selectedFilters.mealType ? encodeURIComponent(selectedFilters.mealType) : '';
-      // const dishTypeParam = selectedFilters.dishType ? encodeURIComponent(selectedFilters.dishType) : '';
+     
 
-      const url = `http://127.0.0.1:5000/?query=${search}&diet=${selectedFilters.diet}&cuisineType=${selectedFilters.cuisineType}&mealType=${selectedFilters.mealType}&dishType=${selectedFilters.dishType}`;
-     ///const url = `http://127.0.0.1:5000/?query=${search}&diet=${dietParam}&health=${healthParam}&cuisineType=${cuisineTypeParam}&mealType=${mealTypeParam}&dishType=${dishTypeParam}`;
-     //const url = new URL('http://127.0.0.1:5000/');
-     //console.log("Health PAram: ", health, health.length)
+      const url = `http://127.0.0.1:5000/?query=${search}&diet=${selectedFilters.diet}&health=${selectedFilters.health}&cuisineType=${selectedFilters.cuisineType}&mealType=${selectedFilters.mealType}&dishType=${selectedFilters.dishType}`;
      console.log('API Request URL:', url);
       const response = await fetch(url);
       if (response.ok) {
@@ -141,12 +131,15 @@ return (
       <button className="search-button" type="submit">
         Search
       </button>
-
+    
       <div className="filter-container">
       <div className="filter-item">
         <label htmlFor="diet">Diet:</label>
           <Dropdown
-          options={diet.map((d) => ({ value: d, label: d }))}
+          options={[
+            { value: '', label: 'Select an option', disabled: true },
+            ...diet.map((d) => ({ value: d, label: d })),
+          ]}
             label = 'Diet'
             onChange={handleDietFilterChange}
             value= {selectedFilters.diet}
@@ -159,7 +152,10 @@ return (
         <div className="filter-item">
         <label htmlFor="health">Health:</label>
         <Dropdown
-          options={health.map((d) => ({ value: d, label: d }))}
+          options={[
+            { value: '', label: 'Select an option', disabled: true },
+            ...health.map((d) => ({ value: d, label: d })),
+          ]}
           onChange={handleHealthFilterChange}
           value={selectedFilters.health}
           placeholder="Select an option"
@@ -169,7 +165,10 @@ return (
         <div className="filter-item">
         <label htmlFor="cuisineType">Cuisine Type:</label>
         <Dropdown
-          options={cuisineType.map((d) => ({ value: d, label: d }))}
+          options={[
+            { value: '', label: 'Select an option', disabled: true },
+            ...cuisineType.map((d) => ({ value: d, label: d })),
+          ]}
           onChange={handleCuisineTypeFilterChange}
           value={selectedFilters.cuisineType}
           placeholder="Select an option"
@@ -179,7 +178,10 @@ return (
         <div className="filter-item">
         <label htmlFor="mealType">Meal Type:</label>
         <Dropdown
-          options={mealType.map((d) => ({ value: d, label: d }))}
+          options={[
+            { value: '', label: 'Select an option', disabled: true },
+            ...mealType.map((d) => ({ value: d, label: d })),
+          ]}
           onChange={handleMealTypeFilterChange}
           value={selectedFilters.mealType}
           placeholder="Select an option"
@@ -190,7 +192,10 @@ return (
         <label htmlFor="dishType">Dish Type:</label>
 
         <Dropdown
-          options={dishType.map((d) => ({ value: d, label: d }))}
+          options={[
+            { value: '', label: 'Select an option', disabled: true },
+            ...dishType.map((d) => ({ value: d, label: d })),
+          ]}
           onChange={handleDishTypeFilterChange}
           value={selectedFilters.dishType}
           placeholder="Select an option"

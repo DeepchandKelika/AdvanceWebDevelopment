@@ -53,11 +53,7 @@ def get_recipes():
         'q': search_query,
         'app_id': API_ID,
         'app_key': API_KEY,
-        # 'diet': diet,
-        # 'health':health,
-        # 'cuisineType': ' ' if not cuisineType else cuisineType,
-        # 'mealType':  ' ' if not mealType else mealType,
-        # 'dishType':  ' ' if not dishType else dishType
+        
     }
 
 
@@ -74,13 +70,11 @@ def get_recipes():
 
 
     
-   # print("Diet:",diet,"Cuisine:",cuisineType,"Meal:",mealType,"Dish:",dishType)
+    
     response = requests.get('https://api.edamam.com/api/recipes/v2', params=params)
-    #print(response)
     try:
         #response.raise_for_status()  # Raise an exception for non-200 status codes
         recipe_data = response.json()
-        print(recipe_data)
         collection.insert_one({
             'search_query': search_query,
             'diet': diet,

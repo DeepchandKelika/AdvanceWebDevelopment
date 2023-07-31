@@ -2,9 +2,10 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 100%;
   display: flex;
+  
   justify-content: center;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
@@ -30,7 +31,8 @@
 
 .popup form {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -79,8 +81,13 @@
   color: #fff;
 }
 
-.button-group {
-  display: flex;
+.button-group {  
   justify-content: center;
   margin-top: 10px;
+}
+
+.button-group button{
+  width : auto ;
+  background-color: greenyellow;
+
 }
