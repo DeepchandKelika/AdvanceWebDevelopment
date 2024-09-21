@@ -1,2 +1,3 @@
 # AdvanceWebDevelopment-Class
-RecipeLookup is my final project for this class. 
+Look into "Recipe Lookup" folder for my project. - Python, Flask, MongoDB
+
